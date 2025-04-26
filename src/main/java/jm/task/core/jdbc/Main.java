@@ -26,11 +26,11 @@ public class Main {
         // Получение всех User из базы и вывод в консоль (должен быть переопределен toString в классе User)
         userService.getAllUsers().forEach(System.out::println);
 
-        // Очистка таблицы User(ов)
-        userService.cleanUsersTable();
-
-        // Удаление таблицы
-        userService.dropUsersTable();
+//        // Очистка таблицы User(ов)
+//        userService.cleanUsersTable();
+//
+//        // Удаление таблицы
+//        userService.dropUsersTable();
 
     }
 }

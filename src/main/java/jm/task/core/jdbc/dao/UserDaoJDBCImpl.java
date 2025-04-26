@@ -3,27 +3,17 @@ package jm.task.core.jdbc.dao;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static jm.task.core.jdbc.util.Util.*;
+
 public class UserDaoJDBCImpl implements UserDao {
 
-    private static final String CREATE_TABLE = "create table if not exists users (\n" +
-            "    id        int auto_increment\n" +
-            "        primary key,\n" +
-            "    name      varchar(45) not null,\n" +
-            "    last_name varchar(45) not null,\n" +
-            "    age       int         not null\n" +
-            ")";
-    private static final String DROP_TABLE = "drop table if exists users";
-    private static final String INSERT_NEW = "insert into users (name, last_name, age) values (?, ?, ?)";
-    private static final String REMOVE_BY_ID = "delete from users where id = ?";
-    private static final String GET_ALL = "select * from users";
-    private static final String CLEAN = "delete from users";
+
 
     public UserDaoJDBCImpl() {
 
