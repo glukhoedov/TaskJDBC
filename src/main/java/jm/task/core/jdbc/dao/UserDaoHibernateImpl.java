@@ -9,9 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static jm.task.core.jdbc.util.Util.*;
-
 public class UserDaoHibernateImpl implements UserDao {
+
+    private static final String CREATE_TABLE = "create table if not exists user (\n" +
+            "    id        int auto_increment\n" +
+            "        primary key,\n" +
+            "    name      varchar(45) not null,\n" +
+            "    last_name varchar(45) not null,\n" +
+            "    age       int         not null\n" +
+            ")";
+    private static final String DROP_TABLE = "drop table if exists user";
+
     public UserDaoHibernateImpl() {
 
     }

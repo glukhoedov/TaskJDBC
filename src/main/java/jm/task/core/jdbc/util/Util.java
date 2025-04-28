@@ -13,19 +13,6 @@ import java.util.Properties;
 
 public class Util {
 
-    public static final String CREATE_TABLE = "create table if not exists user (\n" +
-            "    id        int auto_increment\n" +
-            "        primary key,\n" +
-            "    name      varchar(45) not null,\n" +
-            "    last_name varchar(45) not null,\n" +
-            "    age       int         not null\n" +
-            ")";
-    public static final String DROP_TABLE = "drop table if exists user";
-    public static final String INSERT_NEW = "insert into user (name, last_name, age) values (?, ?, ?)";
-    public static final String REMOVE_BY_ID = "delete from user where id = ?";
-    public static final String GET_ALL = "select * from user";
-    public static final String CLEAN = "delete from user";
-
     private final static String URL = "jdbc:mysql://localhost:3306/mydbtest?useSSL=false&serverTimezone=UTC";
     private final static String USERNAME = "root";
     private final static String PASSSWORD = "qwerty123";
@@ -54,15 +41,6 @@ public class Util {
         } catch (Exception e) {
             System.err.println("Ошибка создания SessionFactory: " + e.getMessage());
         }
-    }
-
-    public static Connection getConnection() {
-        try {
-            return DriverManager.getConnection(URL, USERNAME, PASSSWORD);
-        } catch (SQLException e) {
-            System.err.println("Ошибка создания соединения с БД: " + e.getMessage());
-        }
-        return null;
     }
 
     public static SessionFactory getSessionFactory() {
